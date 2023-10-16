@@ -34,6 +34,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now)
     is_staff= models.BooleanField(default=False)
 
+    objects = CustomUserManager()
+
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
